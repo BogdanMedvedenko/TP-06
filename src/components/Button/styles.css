@@ -1,0 +1,19 @@
+.button_component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  padding: 0;
+  height: 70px;
+  width: 100%;
+  background-color: rgb(82, 82, 241);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button_component:hover {
+  background-color: rgb(104, 104, 233);
+}
