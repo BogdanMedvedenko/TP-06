@@ -8,4 +8,3 @@ export enum WEATHER_CODES {
   DS = "DS",
   SS = "SS",
 }
-
