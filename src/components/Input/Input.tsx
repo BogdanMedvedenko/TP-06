@@ -1,37 +1,36 @@
-import styled from "@emotion/styled";
+import { type InputProps } from "./types";
+import { InputWrapper, InputLabel, InputComponent, ErrorMessage } from "./styles";
 
-interface InputProps {
-  disabled?: boolean;
-  error?: string;
+function Input({
+  id,
+  name,
+  type = "text",
+  placeholder,
+  label,
+  disabled = false,
+  error = undefined,
+  value,
+  onChange
+}: InputProps) {
+  return (
+    <InputWrapper>
+      <InputLabel htmlFor={id}>{label}</InputLabel>
+      <InputComponent
+        id={id}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        disabled={disabled}
+        $error={error}
+        value={value}
+        onChange={onChange}
+      />
+      {/* Условный рендеринг
+      - если слева от && стоит false, то элемент справа от && на странице не показывается(т.е скрывается)
+      - если слева от && стоит true, то элемент справа от && на странице показывается */}
+      {!!error && <ErrorMessage>{error}</ErrorMessage>}
+    </InputWrapper>
+  );
 }
 
-const StyledInput = styled.input<InputProps>`
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  outline: none;
-
-  border: 2px solid
-    ${(props) => (props.error ? "#d32f2f" : "#ccc")};
-
-  background-color: ${(props) =>
-    props.disabled ? "#eeeeee" : "white"};
-
-  cursor: ${(props) =>
-    props.disabled ? "not-allowed" : "text"};
-`;
-
-const ErrorText = styled.div`
-  color: #d32f2f;
-  font-size: 12px;
-  margin-top: 4px;
-`;
-
-export const Input = ({ disabled, error }: InputProps) => {
-  return (
-    <div>
-      <StyledInput disabled={disabled} error={error} />
-      {error && <ErrorText>{error}</ErrorText>}
-    </div>
-  );
-};
+export default Input;
