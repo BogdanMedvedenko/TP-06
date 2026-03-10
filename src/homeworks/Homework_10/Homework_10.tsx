@@ -2,7 +2,6 @@ import { useEffect, useState, type ChangeEvent } from "react";
 import axios from "axios";
 import { v4 } from "uuid";
 
-import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 
 import { PageWrapper, ContainerFacts, Card, Text, ErrorText } from "./styles";
