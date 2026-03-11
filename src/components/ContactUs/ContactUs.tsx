@@ -12,7 +12,7 @@ const validationSchema = Yup.object().shape({
     .required("FULLNAME field is required")
     .min(3, "FULLNAME field should contain min 3 characters")
     .max(50, "FULLNAME field should contain max 50 characters"),
-     [LOGIN_FORM.PHONE]: Yup.number()
+     [LOGIN_FORM.PHONE]: Yup.string()
   .required("PHONE field is required")
   .min(4, "PHONE field should contain min 4 characters")
   .max(20, "PHONE field should contain max 20 characters"),
@@ -57,7 +57,6 @@ function LoginForm() {
         <Input
           id="fullName-id"
           name={LOGIN_FORM.FullNAME}
-          type="password"
           placeholder="Enter your fullName"
           label="fullName"
             value={formik.values[LOGIN_FORM.FullNAME]}
@@ -65,9 +64,8 @@ function LoginForm() {
           error={formik.errors[LOGIN_FORM.FullNAME]}
            />
         <Input
-          id="password-id"
+          id="phone-id"
           name={LOGIN_FORM.PHONE}
-          type="password"
           placeholder="Enter your phone"
           label="Phone"
              value={formik.values[LOGIN_FORM.PHONE]}
