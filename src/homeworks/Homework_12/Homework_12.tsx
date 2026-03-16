@@ -1,4 +1,4 @@
-import ContactUs from "../../components/ContactUs/ContactUs";
+import ContactUs from "../../components/ContactUsForm/ContactUs";
 import { PageWrapper } from "./styles";
 function Homework_12() {
   return (
