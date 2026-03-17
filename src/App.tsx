@@ -10,12 +10,16 @@ import ContactUs from "./pages/EmployeeApp/ContactUs/ContactUs";
 import Aple from "./pages/Clients/Aple/Aple";
 import  Microsoft from "./pages/Clients/Microsoft/Microsoft";
 import Nekki from "./pages/Clients/Nekki/Nekki";
+// lessons
+// import Lesson_14 from "./lessons/Lesson_14/Lesson_14";
 
+// homeworks
+import Homework_13 from "./homeworks/Homework_13/Homework_13";
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <Layout>
+      {/* <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -26,9 +30,11 @@ function App() {
           <Route path="/nekki" element={<Nekki />} />
           <Route path="*" element="Page Not Found" />
         </Routes>
-      </Layout>
- 
+      </Layout> */}
+            {/* <Lesson_14 /> */}
+            <Homework_13/>
     </BrowserRouter>
+
   );
 }
 
